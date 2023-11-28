@@ -9,9 +9,37 @@ function getGeoWeather(lat, lon) {
     return response.json();
     })
     .then(function(data) {
+        var resultsContainer = document.querySelector('.results');
         console.log(data);
-    })
-};
+        // <div class="card" style="width: 18rem;">
+        // <img src="..." class="card-img-top" alt="...">
+        // <div class="card-body">
+        //   <h5 class="card-title">Card title</h5>
+        //   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        // </div>
+        for (var result of data.results) {
+            var cardEl = document.createElement('div');
+            cardEl.classList.add('card');
+
+            var cardBodyEl = document.createElement('div');
+            cardBodyEl.classList.add('card-body');
+
+            var h5El = document.createElement('h5');
+            h5El.classList.add('card-title');
+            h5El.textContent = result.title;
+
+            var pEl = document.createElement('p');
+            pEl.classList.add('card-text');
+            pEl.textContent = result.description.toString();
+
+
+            resultsContainer.appendChild(cardEl);
+            cardEl.appendChild(cardBodyEl);
+            cardBodyEl.append(h5El, pEl);
+    }
+
+});
+}
  
 
  
@@ -27,12 +55,3 @@ fetch('http://api.openweathermap.org/geo/1.0/direct?appid=66726d07d717ef16f36bc8
 }
 getCityGeoData();
 
-function handleSearch(event) {
-  event.preventDefault();
-  var format = formatInput.value;
-  var q = qInput.value;
-  var type = 'search';
-  if (format) {
-    type = format;
-  }
-}
