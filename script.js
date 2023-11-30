@@ -1,7 +1,7 @@
-var locSearchForm = document.querySelector('#loc-search');
-var qInput = document.querySelector('#q');
-var formatInput = document.querySelector('#format');
-var termSpan = document.querySelector('#term');
+// var locSearchForm = document.querySelector('#loc-search');
+// var qInput = document.querySelector('#q');
+// var formatInput = document.querySelector('#format');
+// var termSpan = document.querySelector('#term');
 
 function getGeoWeather(lat, lon) {
     fetch('http://api.openweathermap.org/data/2.5/forecast?appid=66726d07d717ef16f36bc84905667fa1&lat='+ lat +'&lon=' + lon +'&units=imperial')
@@ -11,13 +11,8 @@ function getGeoWeather(lat, lon) {
     .then(function(data) {
         var resultsContainer = document.querySelector('.results');
         console.log(data);
-        // <div class="card" style="width: 18rem;">
-        // <img src="..." class="card-img-top" alt="...">
-        // <div class="card-body">
-        //   <h5 class="card-title">Card title</h5>
-        //   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        // </div>
-        for (var result of data.results) {
+       
+        for (var results of data.result) {
             var cardEl = document.createElement('div');
             cardEl.classList.add('card');
 
