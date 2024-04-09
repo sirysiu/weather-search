@@ -13,7 +13,7 @@ function storeSearch(location) {
 
 function getWeatherApi(lat, lon) {
     var units = "imperial"
-    var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&units=' + units + '&appid=7683dd89e3713c696366aefeb8fa991f';
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&units=' + units + '&appid=66726d07d717ef16f36bc84905667fa1';
 
     fetch(apiUrl)
         .then(function (response) {
