@@ -135,7 +135,7 @@ var formSubmitHandler = function (event) {
     if (locationSearch) {
         storeSearch(locationSearch);
         // This is the code to convert the location name into lon and lat values. 
-        var geoApiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + locationSearch + "&limit=1&appid=7683dd89e3713c696366aefeb8fa991f"
+        var geoApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + locationSearch + "&limit=1&appid=66726d07d717ef16f36bc84905667fa1"
 
         fetch(geoApiUrl)
             .then(function (response) {
@@ -202,7 +202,7 @@ function displaySearchHistory() {
                 if (nameValue) {
 
                     // This is the code to convert the location name into lon and lat values. 
-                    var geoApiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + nameValue + "&limit=1&appid=7683dd89e3713c696366aefeb8fa991f"
+                    var geoApiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + nameValue + "&limit=1&appid=66726d07d717ef16f36bc84905667fa1"
 
                     fetch(geoApiUrl)
                         .then(function (response) {
